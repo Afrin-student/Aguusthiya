@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Agasthiya 💜</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Georgia, "Times New Roman", serif;
+}
+
+body{
+  background:#12051f;
+  color:white;
+  overflow:hidden;
+}
+
+/* ================= BACKGROUND ================= */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%,#7b2cbf55,transparent 30%),
+    radial-gradient(circle at 80% 80%,#c77dff44,transparent 30%),
+    linear-gradient(135deg,#12051f,#2b0a3d,#12051f);
+  z-index:-3;
+}
+
+.stars{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+}
+
+.star{
+  position:absolute;
+  width:3px;
+  height:3px;
+  background:white;
+  border-radius:50%;
+  animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+  from{opacity:.2;transform:scale(.5)}
+  to{opacity:1;transform:scale(1.5)}
+}
+
+/* ================= SLIDES ================= */
+
+.slide{
+  display:none;
+  min-height:100vh;
+  width:100%;
+  padding:35px 25px 90px;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow-y:auto;
+}
+
+.slide.active{
+  display:flex;
+  animation:slideIn .8s ease;
+}
+
+@keyframes slideIn{
+  from{
+    opacity:0;
+    transform:scale(.92) translateY(25px);
+  }
+  to{
+    opacity:1;
+    transform:scale(1) translateY(0);
+  }
+}
+
+.card{
+  width:min(850px,95%);
+  padding:40px 25px;
+  border:1px solid #d8a7ff55;
+  border-radius:30px;
+  background:#ffffff0d;
+  backdrop-filter:blur(15px);
+  box-shadow:0 0 50px #a855f744;
+}
+
+h1{
+  font-size:clamp(38px,8vw,75px);
+  color:#e7c6ff;
+  text-shadow:0 0 20px #c77dff;
+}
+
+h2{
+  font-size:clamp(28px,6vw,50px);
+  color:#e9d5ff;
+  margin-bottom:20px;
+}
+
+p{
+  font-size:clamp(17px,3vw,23px);
+  line-height:1.7;
+  color:#f4eaff;
+  margin:12px 0;
+}
+
+.small{
+  font-size:15px;
+  opacity:.7;
+}
+
+.highlight{
+  color:#d8a7ff;
+  font-weight:bold;
+}
+
+button{
+  border:none;
+  padding:13px 25px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#8b2fc9,#d8a7ff);
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 0 20px #b56cff88;
+  transition:.3s;
+}
+
+button:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 35px #d8a7ff;
+}
+
+/* ================= NAV ================= */
+
+.nav{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:12px;
+  z-index:20;
+}
+
+.counter{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:#ffffff12;
+  padding:8px 15px;
+  border-radius:20px;
+  font-size:13px;
+  z-index:20;
+}
+
+.music{
+  position:fixed;
+  top:20px;
+  left:20px;
+  z-index:20;
+}
+
+/* ================= FLOATING HEARTS ================= */
+
+.heart{
+  position:fixed;
+  bottom:-50px;
+  font-size:22px;
+  animation:floatUp linear forwards;
+  pointer-events:none;
+  z-index:1;
+}
+
+@keyframes floatUp{
+  0%{
+    transform:translateY(0) rotate(0deg);
+    opacity:0;
+  }
+  15%{opacity:1}
+  100%{
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+/* ================= SLIDE 1 ================= */
+
+.secret{
+  font-size:13px;
+  letter-spacing:5px;
+  color:#d8a7ff;
+  margin-bottom:25px;
+}
+
+.glitch{
+  animation:glitch 2s infinite;
+}
+
+@keyframes glitch{
+  0%,90%,100%{transform:none}
+  92%{transform:skew(8deg)}
+  94%{transform:translateX(-5px)}
+  96%{transform:translateX(5px)}
+}
+
+/* ================= TIMELINE ================= */
+
+.timeline{
+  border-left:2px solid #c77dff;
+  text-align:left;
+  margin:30px auto;
+  max-width:650px;
+  padding-left:25px;
+}
+
+.event{
+  margin:25px 0;
+  position:relative;
+}
+
+.event::before{
+  content:"";
+  position:absolute;
+  left:-34px;
+  top:5px;
+  width:15px;
+  height:15px;
+  background:#d8a7ff;
+  border-radius:50%;
+  box-shadow:0 0 15px #d8a7ff;
+}
+
+/* ================= FUNNY CARDS ================= */
+
+.fun-card{
+  margin:15px auto;
+  max-width:650px;
+  padding:22px;
+  border-radius:20px;
+  background:#ffffff0c;
+  border:1px solid #ffffff22;
+}
+
+.emoji{
+  font-size:55px;
+}
+
+/* ================= MASS REVEAL ================= */
+
+.blackout{
+  background:#000;
+}
+
+.reveal-text{
+  opacity:0;
+  animation:revealText 1s forwards;
+}
+
+.delay1{animation-delay:.7s}
+.delay2{animation-delay:1.7s}
+.delay3{animation-delay:2.7s}
+.delay4{animation-delay:4s}
+
+@keyframes revealText{
+  from{
+    opacity:0;
+    transform:scale(.5);
+    filter:blur(15px);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+    filter:blur(0);
+  }
+}
+
+.mass{
+  font-size:clamp(60px,15vw,140px);
+  font-weight:bold;
+  color:#fff;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 30px #c77dff,
+    0 0 60px #9d4edd;
+}
+
+.main-title{
+  font-size:clamp(45px,10vw,100px);
+  color:#d8a7ff;
+  text-shadow:0 0 30px #c77dff;
+}
+
+/* ================= BLESSING ================= */
+
+.blessing{
+  font-size:clamp(28px,6vw,55px);
+  line-height:1.5;
+  color:#fff;
+  text-shadow:0 0 20px #d8a7ff;
+}
+
+/* ================= FINAL ================= */
+
+.final{
+  position:relative;
+}
+
+.confetti{
+  position:fixed;
+  width:8px;
+  height:8px;
+  top:-20px;
+  animation:fall 4s linear forwards;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(720deg);
+  }
+}
+
+.signature{
+  margin-top:30px;
+  font-style:italic;
+  color:#d8a7ff;
+}
+
+/* mobile */
+@media(max-width:600px){
+  .card{
+    padding:30px 18px;
+  }
+
+  .nav{
+    bottom:12px;
+  }
+
+  .nav button{
+    padding:10px 16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="counter" id="counter">1 / 10</div>
+
+<div class="music">
+  <button onclick="toggleMusic()" id="musicBtn">🎵 Music</button>
+</div>
+
+
+<!-- ================= SLIDE 1 ================= -->
+
+<section class="slide active">
+<div class="card">
+
+<div class="secret">⚠ CLASSIFIED BIRTHDAY FILE ⚠</div>
+
+<h1 class="glitch">AGASTHIYA</h1>
+
+<p>
+Something very suspicious has been prepared for you...
+</p>
+
+<p class="small">
+Please continue only if you're ready to expose your own crimes. 👀
+</p>
+
+<br>
+
+<button onclick="nextSlide()">OPEN THE FILE 💜</button>
+
+</div>
+</section>
+
+
+<!-- ================= SLIDE 2 ================= -->
+
+<section class="slide">
+<div class="card">
+
+<div class="emoji">🎓💜</div>
+
+<h2>Once upon a time...</h2>
+
+<p>
+There was a girl named <span class="highlight">Agasthiya</span>.
+</p>
+
+<p>
+And there was another girl who was simply...
+</p>
+
+<h2>her classmate.</h2>
+
+<p>
+1st year-la we were friends.
+Classmates.
+Nothing too dramatic.
+Nothing too special.
+</p>
+
+<p class="highlight">
+But then 2nd year happened...
+</p>
+
+<button onclick="nextSlide()">CONTINUE →</button>
+
+</div>
+</section>
+
+
+<!-- ================= SLIDE 3 ================= -->
+
+<section class="slide">
+<div class="card">
+
+<h2>And somehow...</h2>
+
+<p class="highlight">
+We became REALLY close.
+</p>
+
+<div class="timeline">
+
+<div class="event">
+<strong>1st Year</strong>
+<p>Just classmates + friends.</p>
+</div>
+
+<div class="event">
+<strong>2nd Year</strong>
+<p>Somewhere here, the friendship upgraded itself. 😂</p>
+</div>
+
+<div class="event">
+<strong>3rd Year</strong>
+<p>Too many stories. Too many secrets. Too much nonsense.</p>
+</div>
+
+<div class="event">
+<strong>Final Year</strong>
+<p>And now... one of my closest college people. 🥹💜</p>
+</div>
+
+</div>
+
+<button onclick="nextSlide()">THE CRIMES START HERE →</button>
+
+</div>
+</section>
+
+
+<!-- ================= SLIDE 4 ================= -->
+
+<section class="slide">
+<div class="card">
+
+<h2>🚨 CRIMINAL RECORD 🚨</h2>
+
+<div class="fun-card">
+<div class="emoji">🐸</div>
+<h2>THE RENUKA INCIDENT</h2>
+
+<p>
+One innocent class.
+One HOD teaching.
+Two extremely responsible students.
+</p>
+
+<p class="highlight">
+And somehow... FROG JOKES. 😭
+</p>
+
+<p>
+While Renuka was teaching,
+we were busy creating our own frog cinematic universe.
+</p>
+
+<p>
+The fact that we both laughed at it makes it 100× worse. 💀
+</p>
+</div>
+
+<button onclick="nextSlide()">THERE'S MORE... 😭</button>
+
+</div>
+</section>
+
+
+<!-- ================= SLIDE 5 ================= -->
+
+<section class="slide">
+<div class="card">
+
+<h2>🍞 THE BREAD HALWA CASE</h2>
+
+<p>
+Back in <span class="highlight">1st year</span>...
+</p>
+
+<div class="fun-card">
+
+<p>
+Me:
+</p>
+
+<h2>
+"Agasthiya, one day make my favourite bread halwa." 🥹
+</h2>
+
+<p>
+Agasthiya:
+</p>
+
+<h2>
+"Okayyy." 😌
+</h2>
+
+</div>
+
+<p>
+Fast forward...
+</p>
+
+<h1>FINAL YEAR.</h1>
+
+<p class="highlight">
+THE HALWA IS STILL IN PRODUCTION. 😭😭😭
+</p>
+
+<p>
+Four years of friendship.
+Four years of promises.
+Four years of me being successfully fooled. 💀
+</p>
+
+<button onclick="nextSlide()">NEXT CRIME →</button>
+
+</div>
+</section>
+
+
+<!-- ================= SLIDE 6 ================= -->
+
+<section class="slide">
+<div class="card">
+
+<h2>📱 THE SECRET ARCHIVES</h2>
+
+<div class="fun-card">
+<p>Snapchat fake ID.</p>
+<h2>👀💬</h2>
+<p>
+Random boys.
+Random flirting.
+And me knowing way more than I probably should. 😂
+</p>
+</div>
+
+<div class="fun-card">
+<p>Then comes...</p>
+<h2>DEVAN STORIES 💀</h2>
+<p>
+You don't even have to watch them yourself.
+You can just tell me the whole story. 😭
+</p>
+</div>
+
+<div class="fun-card">
+<h2>MANI ARCHIVES 📚</h2>
+<p>
+So many school memories,
+so many stories,
+so many random details...
+</p>
+</div>
+
+<p class="highlight">
+Basically, your life has been running as a podcast in my ears. 😂💜
+</p>
+
+<button onclick="nextSlide()">BUT WAIT...</button>
+
+</div>
+</section>
+
+
+<!-- ================= SLIDE 7 MASS REVEAL ================= -->
+
+<section class="slide blackout">
+<div>
+
+<p class="reveal-text delay1">YOU THOUGHT...</p>
+
+<h1 class="mass reveal-text delay2">
+THIS WAS
+</h1>
+
+<h1 class="mass reveal-text delay3">
+JUST A
+</h1>
+
+<h1 class="mass reveal-text delay4">
+BIRTHDAY WEBSITE?
+</h1>
+
+</div>
+</section>
+
+
+<!-- ================= SLIDE 8 ================= -->
+
+<section class="slide">
+<div class="card">
+
+<p class="secret">THE ACTUAL REASON 💜</p>
+
+<h1 class="main-title">
+THANK YOU.
+</h1>
+
+<p>
+For becoming one of those people who made college
+feel a little more fun.
+</p>
+
+<p>
+From random conversations...
+to laughing at stupid things...
+to sharing stories that probably should remain classified...
+</p>
+
+<p class="highlight">
+You became more than just a classmate.
+</p>
+
+<h2>
+You became one of my best friends. 🥹💜
+</h2>
+
+<button onclick="nextSlide()">ONE LAST CHAPTER →</button>
+
+</div>
+</section>
+
+
+<!-- ================= SLIDE 9 ================= -->
+
+<section class="slide">
+<div class="card">
+
+<div class="emoji">🎓🥹</div>
+
+<h2>FINAL YEAR.</h2>
+
+<p>
+And this is officially your
+<span class="highlight">last birthday with us in college.</span>
+</p>
+
+<p>
+After this...
+new place.
+new people.
+new responsibilities.
+new life.
+</p>
+
+<p>
+And honestly,
+I hope life gives you everything you deserve.
+</p>
+
+<p class="highlight">
+A beautiful career.
+A really good job.
+A HIGH salary. 💰😂
+</p>
+
+<p>
+And most importantly...
+a peaceful and happy life.
+</p>
+
+<button onclick="nextSlide()">MY BLESSING FOR YOU 🤍</button>
+
+</div>
+</section>
+
+
+<!-- ================= SLIDE 10 ================= -->
+
+<section class="slide final">
+<div class="card">
+
+<div class="emoji">🤍☪️🕉️🤍</div>
+
+<h2>Different backgrounds.</h2>
+
+<h2>Same friendship.</h2>
+
+<p>
+Maybe we don't come from the same background,
+but somehow we created our own little world of memories.
+</p>
+
+<br>
+
+<p class="blessing">
+என் ஆசீர்வாதம்
+<br>
+என்றும் உனக்கு உண்டு,
+<br>
+மகளே. 🤍
+</p>
+
+<br>
+
+<h1>HAPPY BIRTHDAY</h1>
+
+<h1 class="main-title">AGASTHIYA 💜</h1>
+
+<p>
+28 • SEPTEMBER
+</p>
+
+<p class="signature">
+Stay crazy.<br>
+Stay funny.<br>
+Stay exactly who you are.
+</p>
+
+<p class="highlight">
+And please...
+MAKE THAT BREAD HALWA. 😭🍞
+</p>
+
+</div>
+</section>
+
+
+<!-- ================= NAV ================= -->
+
+<div class="nav">
+<button onclick="prevSlide()">←</button>
+<button onclick="nextSlide()">→</button>
+</div>
+
+
+<script>
+
+let current=0;
+
+const slides=document.querySelectorAll(".slide");
+const counter=document.getElementById("counter");
+
+function showSlide(index){
+
+  if(index<0) index=slides.length-1;
+  if(index>=slides.length) index=0;
+
+  slides[current].classList.remove("active");
+
+  current=index;
+
+  slides[current].classList.add("active");
+
+  counter.innerText=(current+1)+" / "+slides.length;
+
+  if(current===slides.length-1){
+    createConfetti();
+  }
+
+}
+
+function nextSlide(){
+  showSlide(current+1);
+}
+
+function prevSlide(){
+  showSlide(current-1);
+}
+
+
+/* ================= STARS ================= */
+
+const stars=document.getElementById("stars");
+
+for(let i=0;i<100;i++){
+
+  const s=document.createElement("div");
+
+  s.className="star";
+
+  s.style.left=Math.random()*100+"%";
+  s.style.top=Math.random()*100+"%";
+
+  s.style.animationDelay=Math.random()*2+"s";
+
+  stars.appendChild(s);
+
+}
+
+
+/* ================= HEARTS ================= */
+
+setInterval(()=>{
+
+  const heart=document.createElement("div");
+
+  heart.className="heart";
+
+  const symbols=["💜","🤍","✨","💫","🌸"];
+
+  heart.innerText=
+    symbols[Math.floor(Math.random()*symbols.length)];
+
+  heart.style.left=Math.random()*100+"%";
+
+  heart.style.animationDuration=
+    (5+Math.random()*5)+"s";
+
+  heart.style.fontSize=
+    (15+Math.random()*25)+"px";
+
+  document.body.appendChild(heart);
+
+  setTimeout(()=>{
+    heart.remove();
+  },10000);
+
+},700);
+
+
+/* ================= CONFETTI ================= */
+
+function createConfetti(){
+
+  for(let i=0;i<120;i++){
+
+    const c=document.createElement("div");
+
+    c.className="confetti";
+
+    c.style.left=Math.random()*100+"%";
+
+    c.style.background=
+      ["#d8a7ff","#ffffff","#c77dff","#9d4edd"]
+      [Math.floor(Math.random()*4)];
+
+    c.style.animationDelay=
+      Math.random()*2+"s";
+
+    c.style.transform=
+      `rotate(${Math.random()*360}deg)`;
+
+    document.body.appendChild(c);
+
+    setTimeout(()=>{
+      c.remove();
+    },5000);
+
+  }
+
+}
+
+
+/* ================= MUSIC ================= */
+
+/*
+  Browser-generated soft music.
+  No audio file required.
+*/
+
+let audioContext;
+let musicPlaying=false;
+let musicTimer;
+
+function toggleMusic(){
+
+  if(!audioContext){
+
+    audioContext=
+      new (window.AudioContext ||
+      window.webkitAudioContext)();
+
+  }
+
+  if(musicPlaying){
+
+    clearInterval(musicTimer);
+
+    musicPlaying=false;
+
+    document.getElementById("musicBtn").innerText="🎵 Music";
+
+    return;
+
+  }
+
+  musicPlaying=true;
+
+  document.getElementById("musicBtn").innerText="🔊 Music ON";
+
+  playNote();
+
+  musicTimer=setInterval(playNote,1200);
+
+}
+
+function playNote(){
+
+  if(!audioContext) return;
+
+  const notes=[
+    261.63,
+    329.63,
+    392.00,
+    523.25,
+    392.00,
+    329.63
+  ];
+
+  const osc=audioContext.createOscillator();
+
+  const gain=audioContext.createGain();
+
+  osc.frequency.value=
+    notes[Math.floor(Math.random()*notes.length)];
+
+  osc.type="sine";
+
+  gain.gain.setValueAtTime(
+    0,
+    audioContext.currentTime
+  );
+
+  gain.gain.linearRampToValueAtTime(
+    0.08,
+    audioContext.currentTime+0.1
+  );
+
+  gain.gain.exponentialRampToValueAtTime(
+    0.001,
+    audioContext.currentTime+1
+  );
+
+  osc.connect(gain);
+
+  gain.connect(audioContext.destination);
+
+  osc.start();
+
+  osc.stop(audioContext.currentTime+1);
+
+}
+
+
+/* ================= KEYBOARD ================= */
+
+document.addEventListener("keydown",(e)=>{
+
+  if(e.key==="ArrowRight"){
+    nextSlide();
+  }
+
+  if(e.key==="ArrowLeft"){
+    prevSlide();
+  }
+
+});
+
+</script>
+
+</body>
+</html>
