@@ -1371,4 +1371,14 @@ document.addEventListener("touchend",function(e){
 </script>
 
 </body>
-</html>
+</html>    
+.slide.active{
+  display:flex;
+  animation:slideIn .8s ease;
+  overflow-y:auto;
+}
+
+.slide.active .card{
+  margin-top:20px;
+  margin-bottom:20px;
+}
