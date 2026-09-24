@@ -1382,3 +1382,39 @@ document.addEventListener("touchend",function(e){
   margin-top:20px;
   margin-bottom:20px;
 }
+.slide.active{
+  display:flex;
+  animation:slideIn .8s ease;
+  overflow-y:auto;
+}
+
+.slide.active .card{
+  margin-top:20px;
+  margin-bottom:20px;
+}
+.slide{
+  display:none;
+  min-height:100vh;
+  width:100%;
+  padding:35px 25px 110px;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow-y:auto;
+  overflow-x:hidden;
+}.slide{
+  display:none;
+  min-height:100vh;
+  width:100%;
+  padding:35px 25px 110px;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow-y:auto;
+  overflow-x:hidden;
+}body{
+  background:#12051f;
+  color:white;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
